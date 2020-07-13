@@ -76,8 +76,7 @@ HAqVePERhISfN6cwZt5p8B3/JUwSR8el66DF7Jm57BM=
 				r, b = decoded.Claims().Subject()
 				assert.True(t, b, "invalid subject")
 				assert.Equal(t, "com.example.app", r)
-
-				decoded.Algorithm()
+				assert.Equal(t, jwt.ES256, decoded.Algorithm())
 			}
 		})
 	}
